@@ -14,7 +14,7 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.scss', '.css']
     },
     module: {
         rules: [
@@ -22,6 +22,22 @@ module.exports = {
                 test: /\.(ts|tsx)$/,
                 loader: 'ts-loader'
             },
+            {
+                test: /\.css$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader'
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                  'style-loader',
+                  'css-loader',
+                  'sass-loader'
+                ]
+              },
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     },
@@ -32,4 +48,4 @@ module.exports = {
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'client', 'index.html') }),
         new webpack.HotModuleReplacementPlugin()
     ]
-}   
+}
