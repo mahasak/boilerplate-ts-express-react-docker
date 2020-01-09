@@ -16,7 +16,6 @@ if (isDevelopment) {
     console.log(__dirname);
     console.log(path.resolve(__dirname, 'public'));
     app.use(express.static(path.resolve(__dirname, 'public')));
-    //app.use(path.resolve(__dirname, 'public'), express.static(path.resolve(__dirname, 'public')));
 }
 
 app.get("/api", (req: express.Request, res: express.Response): void => {

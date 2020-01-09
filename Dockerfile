@@ -10,8 +10,8 @@ RUN npm install pm2 -g
 
 RUN npm run build
 
-COPY ./dist .
+COPY ./dist/server .
 
-EXPOSE 4000
+EXPOSE 5000
 
-CMD ["pm2-runtime","app.js"]
+CMD ["pm2-runtime","server.js"]
