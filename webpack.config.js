@@ -25,6 +25,9 @@ module.exports = {
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     },
+    node: {
+        fs: "empty"
+    },
     plugins: [
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'client', 'index.html') }),
         new webpack.HotModuleReplacementPlugin()
