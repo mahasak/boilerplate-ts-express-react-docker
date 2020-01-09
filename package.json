@@ -4,14 +4,11 @@
   "description": "Sample facebook login/merchant onboarding example",
   "main": "index.js",
   "scripts": {
-    "build:c": "./node_modules/.bin/webpack",
-    "start": "npm run build:c && node src/server/server.js",
-    "start:dev": "npm run build:c && nodemon --config ./nodemon.json",
-    "build:project": "tsc",
-    "build:client": "webpack --config ./webpack.config.js --progress",
-    "dev-build:server": "nodemon --config ./nodemon.json",
-    "dev": "nodemon src/server/server.ts",
-    "build": "tsc -p"
+    "build:client": "./node_modules/.bin/webpack --config ./webpack.config.js --progress",
+    "build:server": "tsc",
+    "start": "npm run build:client && npm run build:server && cd dist/server && node server.js",
+    "start:dev": "npm run build:client && nodemon --config ./nodemon.json",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "Mahasak Pijittum <mahasak@gmail.com>",

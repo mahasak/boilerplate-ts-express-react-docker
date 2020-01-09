@@ -1,5 +1,4 @@
-const _ = require('lodash'),
-    path = require('path'),
+const path = require('path'),
     webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -25,7 +24,7 @@ module.exports = {
         vendor: ['react', 'react-dom']
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist', 'server', 'public'),
         filename: 'js/[name].bundle.js'
     },
     devtool: 'source-map',
@@ -56,9 +55,6 @@ module.exports = {
             },
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
-    },
-    node: {
-        fs: "empty"
     },
     plugins: [
         new HtmlWebpackPlugin({ 

@@ -5,8 +5,8 @@
     "target": "es6",
     "module": "commonjs",
     "sourceMap": true,
-    "outDir": "./build",
-    "rootDir": "./src",
+    "outDir": "./dist",
+    "rootDir": "./src/",
     "jsx": "react",
     "removeComments": true,
     "experimentalDecorators": true,
@@ -20,6 +20,7 @@
   ],
   "exclude": [
     "node_modules",
+    "./src/client/",
     "./src/**/*.test.ts",
     "./src/public/"
   ]
