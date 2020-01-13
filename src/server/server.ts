@@ -1,5 +1,5 @@
 import * as express from 'express';
-import wds from './wds';
+
 import * as path from 'path';
 const port = process.env.PORT || 5000
 
@@ -11,6 +11,7 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 const app = express();
 
 if (isDevelopment) {
+    const wds = require('./wds');
     wds(app);
 } else {
     app.use(express.static(path.resolve(__dirname, 'public')));
