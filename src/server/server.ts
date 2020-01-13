@@ -13,8 +13,6 @@ const app = express();
 if (isDevelopment) {
     wds(app);
 } else {
-    console.log(__dirname);
-    console.log(path.resolve(__dirname, 'public'));
     app.use(express.static(path.resolve(__dirname, 'public')));
 }
 
